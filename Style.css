@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Snippet&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	min-height: 100vh;
+	background-color: #00aeff;
+	font-family: 'Snippet', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* --- Utilities */
+.medium-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+/* --- Container */
+.container {
+	width: 100%;
+	max-width: 850px;
+	padding: 2rem 1rem;
+}
+
+/* --- Header */
+header {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+header h1 {
+	font-size: 2.5rem;
+	margin-bottom: .5rem;
+}
+header .btn {
+	color: #FFF;
+	font-size: 1.1rem;
+	background-color: #7d3f98;
+	font-family: 'Snippet', sans-serif;
+	padding: .6rem 1rem;
+	border: 1px solid #7d3f98;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all .2s linear;
+}
+header .btn:hover {
+	border-color: #FFF;
+	background-color: transparent;
+	box-shadow: 0 5px 10px #7d3f9877;
+}
+
+/* --- Main */
+main {
+	background-color: #FFF;
+	padding: 1.5rem 1rem;
+	border-radius: 10px;
+
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	grid-gap: 1.5rem;
+}
+.left {
+
+}
+.image {
+	margin-bottom: 1rem;
+}
+
+.list-ingredients {
+	list-style-type: none;
+	margin-top: .8rem;
+	padding-left: 1.1rem;
+}
+.list-ingredients li {
+	font-size: .9rem;
+}
+.list-ingredients li::before {
+  content: "\2022";
+  color: #00aeff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1em;
+  font-size: 1rem;
+}
+
+.instructions {
+	line-height: 1.5;
+	text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+
+	.container {
+		max-width: 450px;
+	}
+	main {
+		grid-template-columns: 1fr;
+	}
+
+}
