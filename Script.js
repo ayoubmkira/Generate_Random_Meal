@@ -1,4 +1,5 @@
 
+const mainElm        = document.getElementById('main');
 const btnNewMeal     = document.getElementById('btn');
 const imageElm       = document.getElementById('image');
 const ingredientsElm = document.getElementById('list-ingredients');
@@ -47,20 +48,35 @@ function insertMealIntoDom(meal) {
 
 }
 
+// Show/Hide Loading:
+function showLoading(show = true) {
+
+	if(show) {
+		imageElm.src = '';
+		ingredientsElm.innerHTML = '';
+		mealNameElm.innerText = '';
+		instructionsElm.innerText = '';
+		mainElm.setAttribute("data-wait", "wait");
+	} else {
+		mainElm.setAttribute("data-wait", "");
+	}
+
+}
+
 
 function generateNewMeal() {
 
+	showLoading(true);
 	fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 	.then(response => response.json())
 	.then(data => data.meals[0])
 	.then(meal => {
+		showLoading(false);
 		insertMealIntoDom(meal);
 	})
 	.catch(error => console.log(error));
 
 }
-
 generateNewMeal();
-
 
 btnNewMeal.addEventListener('click', generateNewMeal);

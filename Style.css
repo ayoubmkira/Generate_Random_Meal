@@ -17,6 +17,9 @@ img {
 	max-width: 100%;
 	display: block;
 }
+ul {
+	list-style: none;
+}
 
 /* --- Utilities */
 .medium-title {
@@ -97,6 +100,53 @@ main {
 	line-height: 1.5;
 	text-align: justify;
 }
+
+/* Wait */
+.title-wait,
+.image-wait,
+.list-wait,
+.paragraph-wait {
+	display: none;
+}
+[data-wait="wait"] .title-wait,
+[data-wait="wait"] .image-wait,
+[data-wait="wait"] .list-wait,
+[data-wait="wait"] .paragraph-wait {
+	display: block;
+}
+.title-wait,
+.image-wait,
+.list-wait > li,
+.paragraph-wait > li {
+	border: 1px solid #F6F6F6;
+	background-color: #f6f7f8;
+	animation: load 2s linear infinite;
+}
+.title-wait {
+	height: 30px;
+}
+.image-wait {
+	height: 150px;
+}
+.list-wait > li {
+	height: 12px;
+	margin-top: 7px;
+}
+.paragraph-wait {
+	margin-top: 25px;
+}
+.paragraph-wait > li {
+	height: 17px;
+	margin-top: 10px;
+}
+.paragraph-wait > li.one {max-width: 80%;}
+.paragraph-wait > li.two {max-width: 75%;}
+.paragraph-wait > li.three {max-width: 90%;}
+
+@keyframes load {
+	to {background-color: #CCC;}
+}
+
 
 @media screen and (max-width: 600px) {
 
